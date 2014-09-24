@@ -1,0 +1,116 @@
+/* mixins */
+.gradient(@angle, @color1, @color2) {
+    background: @color1;
+    background: -moz-linear-gradient(@angle, @color1 0%, @color2 100%);
+    background: -webkit-linear-gradient(@angle, @color1 0%, @color2 100%);
+    background: -o-linear-gradient(@angle, @color1 0%, @color2 100%);
+    background: -ms-linear-gradient(@angle, @color1 0%, @color2 100%);
+    background: linear-gradient(@angle, @color1 0%, @color2 100%);
+}
+
+/* shortcuts */
+@fontURL: '/static/fonts';
+@imageURL: '/static/images';
+
+
+/* fonts */
+@font-face {
+    font-family: Gotham-Black;
+    src: url("@{fontURL}/Gotham-Black.otf");
+}
+
+@font-face {
+    font-family: Gotham-Bold;
+    src: url("@{fontURL}/Gotham-Bold.ttf");
+}
+
+@font-face {
+    font-family: Gotham-Book;
+    src: url("@{fontURL}/Gotham-Book.ttf");
+}
+
+@font-face {
+    font-family: Gotham-Medium;
+    src: url("@{fontURL}/Gotham-Medium.ttf");
+}
+
+@font-face {
+    font-family: Gotham-Light;
+    src: url("@{fontURL}/Gotham-Light.ttf");
+}
+
+@font-face {
+    font-family: Sentinel-Bold;
+    src: url("@{fontURL}/Sentinel-Bold.ttf");
+}
+
+@font-face {
+    font-family: Sentinel-Black;
+    src: url("@{fontURL}/Sentinel-Black.ttf");
+}
+
+@font-face {
+    font-family: Sentinel-Light;
+    src: url("@{fontURL}/Sentinel-Light.ttf");
+}
+
+@font-face {
+    font-family: Sentinel-Medium;
+    src: url("@{fontURL}/Sentinel-Medium.ttf");
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Gotham-Light;
+    color: white;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: Gotham-Medium;
+}
+.cover {
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+    background-size: cover;
+
+    &.cover-orange {
+        .gradient(45deg, #fe3e3b, #ff9900);
+    }
+
+    &.cover-purple {
+        .gradient(45deg, #8339d3, #c100db);
+    }
+}
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    background: transparent url('@{imageURL}/overlay.png');
+    opacity: .5;
+}
+
+.rotate {
+    width: 80px;
+    height: 80px;
+
+    -webkit-transition:all 2.0s ease-out;
+    -moz-transition:all 2.0s ease-out;
+    -ms-transition:all 2.0s ease-out;
+    -o-transition:all 2.0s ease-out;
+    transition:all 2.0s ease-out;
+
+    &:hover {
+        -webkit-transform:rotate(720deg);
+        -moz-transform:rotate(720deg);
+        -ms-transform:rotate(720deg);
+        -o-transform:rotate(720deg);
+        transform:rotate(720deg);
+    }
+}
+

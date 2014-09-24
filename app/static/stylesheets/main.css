@@ -1,0 +1,102 @@
+/* mixins */
+/* shortcuts */
+/* fonts */
+@font-face {
+  font-family: Gotham-Black;
+  src: url("/static/fonts/Gotham-Black.otf");
+}
+@font-face {
+  font-family: Gotham-Bold;
+  src: url("/static/fonts/Gotham-Bold.ttf");
+}
+@font-face {
+  font-family: Gotham-Book;
+  src: url("/static/fonts/Gotham-Book.ttf");
+}
+@font-face {
+  font-family: Gotham-Medium;
+  src: url("/static/fonts/Gotham-Medium.ttf");
+}
+@font-face {
+  font-family: Gotham-Light;
+  src: url("/static/fonts/Gotham-Light.ttf");
+}
+@font-face {
+  font-family: Sentinel-Bold;
+  src: url("/static/fonts/Sentinel-Bold.ttf");
+}
+@font-face {
+  font-family: Sentinel-Black;
+  src: url("/static/fonts/Sentinel-Black.ttf");
+}
+@font-face {
+  font-family: Sentinel-Light;
+  src: url("/static/fonts/Sentinel-Light.ttf");
+}
+@font-face {
+  font-family: Sentinel-Medium;
+  src: url("/static/fonts/Sentinel-Medium.ttf");
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Gotham-Light;
+  color: white;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Gotham-Medium;
+}
+.cover {
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+  background-size: cover;
+}
+.cover.cover-orange {
+  background: #fe3e3b;
+  background: -moz-linear-gradient(45deg, #fe3e3b 0%, #ff9900 100%);
+  background: -webkit-linear-gradient(45deg, #fe3e3b 0%, #ff9900 100%);
+  background: -o-linear-gradient(45deg, #fe3e3b 0%, #ff9900 100%);
+  background: -ms-linear-gradient(45deg, #fe3e3b 0%, #ff9900 100%);
+  background: linear-gradient(45deg, #fe3e3b 0%, #ff9900 100%);
+}
+.cover.cover-purple {
+  background: #8339d3;
+  background: -moz-linear-gradient(45deg, #8339d3 0%, #c100db 100%);
+  background: -webkit-linear-gradient(45deg, #8339d3 0%, #c100db 100%);
+  background: -o-linear-gradient(45deg, #8339d3 0%, #c100db 100%);
+  background: -ms-linear-gradient(45deg, #8339d3 0%, #c100db 100%);
+  background: linear-gradient(45deg, #8339d3 0%, #c100db 100%);
+}
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  background: transparent url('/static/images/overlay.png');
+  opacity: .5;
+}
+.rotate {
+  width: 80px;
+  height: 80px;
+  -webkit-transition: all 2s ease-out;
+  -moz-transition: all 2s ease-out;
+  -ms-transition: all 2s ease-out;
+  -o-transition: all 2s ease-out;
+  transition: all 2s ease-out;
+}
+.rotate:hover {
+  -webkit-transform: rotate(720deg);
+  -moz-transform: rotate(720deg);
+  -ms-transform: rotate(720deg);
+  -o-transform: rotate(720deg);
+  transform: rotate(720deg);
+}
