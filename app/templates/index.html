@@ -22,7 +22,8 @@
 </head>
 
 <body>
-    <div class="cover cover-orange">
+
+    <div id="page1" class="cover cover-orange">
         <div class="overlay"></div>
         <div class="container-fluid">
             <div class="col-xs-4 col-xs-offset-4 text-center">
@@ -31,8 +32,27 @@
                 <img src="/static/images/llama.png" class="rotate" />
             </div> 
         </div>
+        <div class="arrow-down"><span class="glyphicon glyphicon-chevron-down" data-order="next" data-direction="down" data-page="1"></span></div>
     </div>
-    <div class="cover cover-purple hide"></div>
+    
+    <div id="page2" class="cover cover-purple hide">
+        <div class="overlay"></div>
+        <div class="container-fluid">
+            <div class="col-xs-4 text-center">
+                <h2>Header 1</h2>
+                <p>llamallamallamallamallamallama llamallamallamallamallamallama llamallamallamallamallamallama llamallamallamallamallamallama</p>
+            </div>
+            <div class="col-xs-4 text-center">
+                <h2>Header 1</h2>
+                <p>llamallamallamallamallamallama llamallamallamallamallamallama llamallamallamallamallamallama llamallamallamallamallamallama</p>
+            </div>
+            <div class="col-xs-4 text-center">
+                <h2>Header 1</h2>
+                <p>llamallamallamallamallamallama llamallamallamallamallamallama llamallamallamallamallamallama llamallamallamallamallamallama</p>
+            </div>
+        </div>
+        <div class="arrow-up"><span class="glyphicon glyphicon-chevron-up" data-order="prev" data-direction="up" data-page="2"></span></div>
+   </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
