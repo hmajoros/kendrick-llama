@@ -1,3 +1,4 @@
+/* main variables */
 /* mixins */
 /* shortcuts */
 /* fonts */
@@ -58,21 +59,29 @@ h6 {
   padding-top: 100px;
   background-size: cover;
 }
-.cover.cover-orange {
-  background: #fe3e3b;
-  background: -moz-linear-gradient(45deg, #fe3e3b 0%, #ff9900 100%);
-  background: -webkit-linear-gradient(45deg, #fe3e3b 0%, #ff9900 100%);
-  background: -o-linear-gradient(45deg, #fe3e3b 0%, #ff9900 100%);
-  background: -ms-linear-gradient(45deg, #fe3e3b 0%, #ff9900 100%);
-  background: linear-gradient(45deg, #fe3e3b 0%, #ff9900 100%);
+.cover.cover-main {
+  background: #e97255;
+  background: -moz-linear-gradient(45deg, #e97255 0%, #bf3919 100%);
+  background: -webkit-linear-gradient(45deg, #e97255 0%, #bf3919 100%);
+  background: -o-linear-gradient(45deg, #e97255 0%, #bf3919 100%);
+  background: -ms-linear-gradient(45deg, #e97255 0%, #bf3919 100%);
+  background: linear-gradient(45deg, #e97255 0%, #bf3919 100%);
 }
-.cover.cover-purple {
-  background: #8339d3;
-  background: -moz-linear-gradient(45deg, #8339d3 0%, #c100db 100%);
-  background: -webkit-linear-gradient(45deg, #8339d3 0%, #c100db 100%);
-  background: -o-linear-gradient(45deg, #8339d3 0%, #c100db 100%);
-  background: -ms-linear-gradient(45deg, #8339d3 0%, #c100db 100%);
-  background: linear-gradient(45deg, #8339d3 0%, #c100db 100%);
+.cover.cover-white {
+  color: black;
+  border: 7px solid #ddd;
+}
+.cover.cover-secondary {
+  background: #e97255;
+  background: -moz-linear-gradient(45deg, #e97255 0%, #e34c27 100%);
+  background: -webkit-linear-gradient(45deg, #e97255 0%, #e34c27 100%);
+  background: -o-linear-gradient(45deg, #e97255 0%, #e34c27 100%);
+  background: -ms-linear-gradient(45deg, #e97255 0%, #e34c27 100%);
+  background: linear-gradient(45deg, #e97255 0%, #e34c27 100%);
+}
+.cover.cover-secondary a {
+  color: black;
+  font-family: Gotham-Medium;
 }
 .overlay {
   position: fixed;
@@ -84,6 +93,18 @@ h6 {
   left: 0;
   background: transparent url('/static/images/overlay.png');
   opacity: .5;
+}
+.button-main {
+  padding: 10px 20px;
+  margin-top: 15px;
+  color: white;
+  background-color: #e97255;
+  border-radius: 3px;
+}
+.button-main:hover {
+  text-decoration: none;
+  background-color: #e34c27;
+  color: white;
 }
 .rotate {
   width: 80px;
