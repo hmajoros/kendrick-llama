@@ -14,22 +14,65 @@
 
     function resizeCover() {
         var winHeight = $(window).height(),
-            winWidth = $(window).width(),
-            cntHeight,
-            coverPadding;
+            winWidth = $(window).width();
 
         $('.cover').each(function() {
-            cntHeight = $(this).find('.container').height();
-            coverPadding = (winHeight - cntHeight) / 2; 
-
             $(this).css({
                 width: winWidth,
                 height: winHeight,
-                paddingTop: coverPadding
             });
         });
+
+        resizePageOne(winHeight);
+        resizePageTwo(winHeight);
+        resizePageThree(winHeight);
     }
-        
+
+    function resizePageOne(winHeight) {
+        var page = $('#page1'),
+            content = page.find('.main-content'),
+            arrowDn = page.find('.container:last'),
+            cntPadding = (winHeight - content.height()) / 2,
+            arrowPadding = cntPadding - arrowDn.height(); 
+
+        if (content.height() + arrowDn.height() < page.height()) {
+            content.css({ paddingTop: cntPadding });
+            arrowDn.css({ paddingTop: arrowPadding });
+        } else {
+            content.css({ paddingTop: 0 });
+            arrowDn.css({ paddingTop: 0 });
+        }
+    }
+    
+    function resizePageTwo(winHeight) {
+        var page = $('#page2'), 
+            content = page.find('.main-content'),
+            arrowUp = page.find('.container:first'),
+            arrowDn = page.find('.container:last'),
+            padding = ((winHeight - content.height()) / 2) - arrowUp.height();
+
+        if (content.height() + arrowUp.height() + arrowDn.height() < page.height()) {
+            content.css({ paddingTop: padding });
+            arrowDn.css({ paddingTop: padding });
+        } else {
+            content.css({ paddingTop: 0 });
+            arrowDn.css({ paddingTop: 0 });
+        }
+    }    
+    
+    function resizePageThree(winHeight) {
+        var page = $('#page3'),
+            content = page.find('.main-content'),
+            arrowUp = page.find('.container:first'),
+            padding = ((winHeight - content.height()) / 2) - arrowUp.height();
+
+        if (content.height() + arrowUp.height() < page.height()) {
+            content.css({ paddingTop: padding });
+        } else {
+            content.css({ paddingTop: 0 });
+        }
+    }
+
     function renderPageChange() {
         var clicked = $(this),
             direction = clicked.data('direction'),
