@@ -56,8 +56,8 @@ h6 {
   position: absolute;
   width: 100%;
   height: 100%;
-  padding-top: 100px;
   background-size: cover;
+  overflow: scroll;
 }
 .cover.cover-main {
   background: #e97255;

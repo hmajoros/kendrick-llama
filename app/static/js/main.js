@@ -5,58 +5,31 @@
 
     function onDocReady() {
         // page load functions
-        setCoverHeight();
+        resizeCover();
 
         // functions bound to events
         $(window).on('resize', resizeCover);
         $('.glyphicon').on('click', renderPageChange);
     }
 
-    function setCoverHeight() {
-        var winHeight = $(window).height();
-
-        $('.cover').css({
-            height: winHeight,
-            paddingTop: winHeight / 3 
-        });
-    }
-
     function resizeCover() {
         var winHeight = $(window).height(),
-            winWidth = $(window).width();
+            winWidth = $(window).width(),
+            cntHeight,
+            coverPadding;
 
-        $('.cover').css({
-            height: winHeight,
-            width: winWidth,
-            paddingTop: winHeight / 3
+        $('.cover').each(function() {
+            cntHeight = $(this).find('.container').height();
+            coverPadding = (winHeight - cntHeight) / 2; 
+
+            $(this).css({
+                width: winWidth,
+                height: winHeight,
+                paddingTop: coverPadding
+            });
         });
     }
-
-    // function renderPageChange() {
-    //     var clicked = $(this),
-    //         attr = clicked.data('attribute'),
-    //         page = clicked.data('page'),
-    //         options = { 
-    //             "speed": 500,
-    //             "updateURL": false, 
-    //             "callbackAfter": function(toggle, anchor) { console.warn('calledback!'); $('#page' + page).addClass('hide'); }
-    //         },
-    //         newPage;
-
-    //     if (attr === 'next') {
-    //         newPage = '#page' + (page + 1);
-    //         $('#page' + (page + 1)).removeClass('hide');
-    //         smoothScroll.animateScroll(null, newPage, options);
-    //     }
-
-    //     if (attr === 'prev') {
-    //         newPage = '#page' + (page - 1);
-    //         console.warn(newPage);
-    //         $('#page' + (page - 1)).removeClass('hide'); 
-    //         smoothScroll.animateScroll(null, newPage, options);
-    //     }
-    // }
-    
+        
     function renderPageChange() {
         var clicked = $(this),
             direction = clicked.data('direction'),
@@ -74,26 +47,30 @@
         
         if (direction === 'up') scrollPageUp(curPage, nextPage);
         if (direction === 'down') scrollPageDown(curPage, nextPage);
-        if (direction === 'left') scrollPageLeft(curPage, nextPage);
-        if (direction === 'right') scrollPageRight(curPage, nextPage);
+        // if (direction === 'left') scrollPageLeft(curPage, nextPage);
+        // if (direction === 'right') scrollPageRight(curPage, nextPage);
     }
 
     function scrollPageUp(curPage, nextPage) {
-        var winHeight = $(window).height(); 
+        var winHeight = $(window).height(),
+            nextEl = $('#page' + nextPage),
+            curEl = $('#page' + curPage);
 
-        $('#page' + nextPage).css({ top: 0 - winHeight});
-        $('#page' + nextPage).removeClass('hide');
 
-        $('#page' + nextPage).animate({ top: 0 }, {
+        nextEl.css({ top: 0 - winHeight}).removeClass('hide');
+
+        resizeCover();
+        
+        nextEl.animate({ top: 0 }, {
              duration: 500, 
              queue: false
         }); 
 
-        $('#page' + curPage).animate({ top: winHeight }, {
+        curEl.animate({ top: winHeight }, {
             duration: 500, 
             queue: false, 
             complete: function() {
-                $('#page' + curPage).addClass('hide');
+                curEl.addClass('hide');
             }
         });
     }
@@ -104,6 +81,8 @@
             curEl = $('#page' + curPage);
 
         nextEl.css({ top: winHeight }).removeClass('hide');
+    
+        resizeCover();
 
         nextEl.animate({ top: 0 }, {
             duration: 500,
