@@ -35,7 +35,7 @@
             cntPadding = (winHeight - content.height()) / 2,
             arrowPadding = cntPadding - arrowDn.height(); 
 
-        if (content.height() + arrowDn.height() < page.height()) {
+        if (content.height() + arrowDn.height() < winHeight && cntPadding >= 0) {
             content.css({ paddingTop: cntPadding });
             arrowDn.css({ paddingTop: arrowPadding });
         } else {
@@ -51,7 +51,7 @@
             arrowDn = page.find('.container:last'),
             padding = ((winHeight - content.height()) / 2) - arrowUp.height();
 
-        if (content.height() + arrowUp.height() + arrowDn.height() < page.height()) {
+        if (content.height() + arrowUp.height() + arrowDn.height() < winHeight && padding >= 0) {
             content.css({ paddingTop: padding });
             arrowDn.css({ paddingTop: padding });
         } else {
@@ -66,7 +66,9 @@
             arrowUp = page.find('.container:first'),
             padding = ((winHeight - content.height()) / 2) - arrowUp.height();
 
-        if (content.height() + arrowUp.height() < page.height()) {
+            console.warn(padding);
+
+        if (content.height() + arrowUp.height() < winHeight && padding >= 0) {
             content.css({ paddingTop: padding });
         } else {
             content.css({ paddingTop: 0 });

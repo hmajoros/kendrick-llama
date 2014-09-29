@@ -137,3 +137,10 @@ h6 {
 .arrow-up:hover {
   cursor: pointer;
 }
+/* styles for join page */
+.join-form {
+  padding-top: 40px;
+}
+.form-group {
+  font-family: Gotham-Medium;
+}
