@@ -11,3 +11,8 @@ def index():
 @app.route('/join.html')
 def join():
     return render_template('join.html')
+
+@app.route('/thanks')
+@app.route('/thanks.html')
+def thanks():
+    return render_template('thanks.html')

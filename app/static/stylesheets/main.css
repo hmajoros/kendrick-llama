@@ -141,6 +141,15 @@ h6 {
 .join-form {
   padding-top: 40px;
 }
+.standout {
+  color: #e65f3e;
+  padding-bottom: 10px;
+}
 .form-group {
   font-family: Gotham-Medium;
+}
+.form-control:focus {
+  border-color: #e65f3e;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(230, 95, 62, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(230, 95, 62, 0.6);
 }
