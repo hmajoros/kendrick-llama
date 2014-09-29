@@ -25,6 +25,7 @@
     src: url("@{fontURL}/Gotham-Light.ttf");
 }
 
+/* basic style elements */
 body {
     margin: 0;
     padding: 0;
@@ -34,6 +35,22 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: Gotham-Medium;
 }
+
+.button-main {
+    padding: 10px 20px;
+    margin-top: 15px;
+    color: white;
+    background-color: lighten(@primary, 5%);
+    border-radius: 3px;
+
+    &:hover {
+        text-decoration: none;
+        background-color: darken(@primary, 5%);
+        color: white;
+    }
+}
+
+/* home page styles */
 .cover {
     position: absolute;
     width: 100%;
@@ -60,23 +77,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .arrow {
-    font-size: 24px;
     padding: 30px 0;
+    font-size: 24px;
 }
 
-.button-main {
-    padding: 10px 20px;
-    margin-top: 15px;
-    color: white;
-    background-color: lighten(@primary, 5%);
-    border-radius: 3px;
-
-    &:hover {
-        text-decoration: none;
-        background-color: darken(@primary, 5%);
-        color: white;
-    }
-}
 .rotate {
     width: 80px;
     height: 80px;
@@ -115,14 +119,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .standout {
-    color: @primary;
     padding-bottom: 10px;
+    color: @primary;
 }
 
 .form-group {
-    font-family: Gotham-Medium;
+    font-family: Gotham-Medium; 
 }
 
+// overwrite bootstrap default focus colors
 .form-control:focus {
     border-color: @primary;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(230, 95, 62, 0.6);
@@ -135,8 +140,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .review-body {
-    border: 5px solid @primary;
     padding: 10px 15px 70px 15px;
+    border: 5px solid @primary;
     font-size: 24px;
     font-family: Gotham-Medium;
 }
@@ -148,6 +153,6 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 70px;
     border: 5px solid @primary;
     border-radius: 70px;
-    background-size: 100%;
+    background-size: cover;
     background-position: 50%, 50%;
 }

@@ -21,3 +21,8 @@ def thanks():
 @app.route('/reviews.html')
 def reviews():
     return render_template('reviews.html')
+
+@app.route('/nope')
+@app.route('/nope.html')
+def nope():
+    return render_template('nope.html')
