@@ -3,40 +3,12 @@
 /* shortcuts */
 /* fonts */
 @font-face {
-  font-family: Gotham-Black;
-  src: url("/static/fonts/Gotham-Black.otf");
-}
-@font-face {
-  font-family: Gotham-Bold;
-  src: url("/static/fonts/Gotham-Bold.ttf");
-}
-@font-face {
-  font-family: Gotham-Book;
-  src: url("/static/fonts/Gotham-Book.ttf");
-}
-@font-face {
   font-family: Gotham-Medium;
   src: url("/static/fonts/Gotham-Medium.ttf");
 }
 @font-face {
   font-family: Gotham-Light;
   src: url("/static/fonts/Gotham-Light.ttf");
-}
-@font-face {
-  font-family: Sentinel-Bold;
-  src: url("/static/fonts/Sentinel-Bold.ttf");
-}
-@font-face {
-  font-family: Sentinel-Black;
-  src: url("/static/fonts/Sentinel-Black.ttf");
-}
-@font-face {
-  font-family: Sentinel-Light;
-  src: url("/static/fonts/Sentinel-Light.ttf");
-}
-@font-face {
-  font-family: Sentinel-Medium;
-  src: url("/static/fonts/Sentinel-Medium.ttf");
 }
 body {
   margin: 0;
@@ -86,17 +58,6 @@ h6 {
 .arrow {
   font-size: 24px;
   padding: 30px 0;
-}
-.overlay {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  top: 0;
-  left: 0;
-  background: transparent url('/static/images/overlay.png');
-  opacity: .5;
 }
 .button-main {
   padding: 10px 20px;
@@ -152,4 +113,24 @@ h6 {
   border-color: #e65f3e;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(230, 95, 62, 0.6);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(230, 95, 62, 0.6);
+}
+/* styles for reviews page */
+.review {
+  width: 100%;
+}
+.review-body {
+  border: 5px solid #e65f3e;
+  padding: 10px 15px 70px 15px;
+  font-size: 24px;
+  font-family: Gotham-Medium;
+}
+.review-icon {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  bottom: 70px;
+  border: 5px solid #e65f3e;
+  border-radius: 70px;
+  background-size: 100%;
+  background-position: 50%, 50%;
 }

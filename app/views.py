@@ -16,3 +16,8 @@ def join():
 @app.route('/thanks.html')
 def thanks():
     return render_template('thanks.html')
+
+@app.route('/reviews')
+@app.route('/reviews.html')
+def reviews():
+    return render_template('reviews.html')
